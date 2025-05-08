@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花卉展示</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            background-color: #222;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px auto;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+            .nav a {
+                text-decoration: none;
+                padding: 6px 12px;
+                background-color: #eee;
+                border-radius: 5px;
+                color: #333;
+            }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .flower-box {
+            flex: 1 1 22%;
+            background-color: #ffe4ec;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .flower-label {
+            background-color: pink;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .flower-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* 手機版 */
+        @media (max-width: 600px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+                .nav.active {
+                    display: flex;
+                }
+
+            .flower-box {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav").classList.toggle("active");
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h2>這是一個回應式網頁設計文字過長的範例</h2>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="nav" id="nav">
+            <a href="#">百合花</a>
+            <a href="#">野薑花</a>
+            <a href="#">水仙花</a>
+            <a href="#">玫瑰花</a>
+          
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="flower-box">
+                <div class="flower-label">百合花</div>
+                <img src="https://www.fe-tw.com/archive/image/product3/images/fa079_630.486.jpg" alt="百合花">
+            </div>
+            <div class="flower-box">
+                <div class="flower-label">野薑花</div>
+                <img src="https://parks.gov.taipei/upload/m3s1/351685FB-A463-4BEA-80FD-00836185C6A3.jpg" alt="野薑花">
+            </div>
+            <div class="flower-box">
+                <div class="flower-label">水仙花</div>
+                <img src="https://shoplineimg.com/62cb90c69730d2004d2343f2/6628597cd447ff00205f6214/750x.jpg?" alt="水仙花">
+            </div>
+            <div class="flower-box">
+                <div class="flower-label">玫瑰花</div>
+                <img src="https://images.pexels.com/photos/196664/pexels-photo-196664.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="玫瑰花">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
